@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SPA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab" rel="stylesheet">
+  <script src="https://use.fontawesome.com/38bc3e2e06.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="b-popup" id="popup1">
+      <div class="b-popup-content">
+        <a href="javascript:PopUpHide()"><i class="fas fa-times"></i></a>
+        <input type="text" id="headingInput" placeholder="Заголовок">
+        <select id="priorityInput">
+          <option value="3">High</option>
+          <option value="2" selected='selected'>Normal</option>
+          <option value="1">Low</option>
+        </select>
+        <input type="date" id="dateInput" placeholder="Дата">
+        <input type="text" id="descriptionInput" placeholder="Описание">
+        <button id="new_task">ОК</button>
+      </div>
+    </div>
+    <div class="b-popup" id="popup2">
+      <div class="b-popup-content">
+        <a href="javascript:PopUpHide()"><i class="fas fa-times"></i></a>
+        <input type="text" id="headingInput2" placeholder="Заголовок">
+        <select id="priorityInput2">
+          <option value="3">High</option>
+          <option value="2" selected='selected'>Normal</option>
+          <option value="1">Low</option>
+        </select>
+        <input type="date" id="dateInput2" placeholder="Дата">
+        <input type="text" id="descriptionInput2" placeholder="Описание">
+        <button id="edited_task">ОК</button>
+      </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">SETTINGS</a></li>
+          <li class="submenu">
+            <a>CHANGE THEME</a>
+            <ul style="display: none">
+              <li><a href="javascript:colorTheme('#ba4c49','#f7e8e7','#850009','#e0907a','#fdd8a3')">RED THEME</a></li>
+              <li><a href="javascript:colorTheme('#f28500','#ffca00','#240d00','#005100','#648e00')">YELLOW THEME</a></li>
+              <li><a href="javascript:colorTheme('#63a91f','#c6dc93','#1a512e','#589d62','#b0d3bf')">GREEN THEME</a></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+    <div id="main" class="scrollDiv">
+      <header id="header">
+        <span id="myBtn" class="openclose">&#9776;</span>
+        <div>
+          <span>Sort by priority: </span>
+          <a href="javascript:sortByPriority()"><i class="fas fa-sort-amount-down"></i></a>
+          <a href="javascript:sortByPriority2()"><i class="fas fa-sort-amount-up"></i></a>
+          <span>Sort by date: </span>
+          <a href="javascript:sortByDate()"><i class="far fa-clock"></i></a>
+          <span>Add new task: </span>
+          <a href="javascript:PopUpShow()"> <i class="far fa-plus-square"></i></a>
+        </div>
+      </header>
+      <main id="main_block">
+        <div class="tasks_todo">
+          <span class="bold_black">To DO</span>
+          <span id="tasks_number" class="bold_gray">(0)</span>
+          <a href="javascript:listView()"><i class="fas fa-list"></i></a>
+          <a href="javascript:tableView()"><i class="fas fa-th"></i></a>
+          <ul id="list1" class='all_tasks'>
+
+          </ul>
+        </div>
+        <div class="tasks_completed">
+          <span class="bold_black">Completed</span>
+          <span id="tasks_number2"  class="bold_gray">(0)</span>
+          <ul id="list2" class="completed">
+            
+          </ul>
+        </div>
+      </main>
+      <footer id="footer">
+        Single Page Application by Valentin Chernyshov
+      </footer>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="js/script.js" defer></script>
+<!--  <script src="js/prefixfree.js"></script>    -->
+</body>
+</html>
